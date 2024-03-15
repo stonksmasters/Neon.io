@@ -1,18 +1,20 @@
-// src/App.js
 import React from 'react';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HeroSection from './components/HeroSection';
 import CustomizeNeon from './components/CustomizeNeon';
-// Import other components as you create them
+// Import other components
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <CustomizeNeon />
-      {/* Place other component tags here as you create them */}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/customize" element={<CustomizeNeon />} />
+          {/* Define other routes as needed */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
